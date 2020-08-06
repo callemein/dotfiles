@@ -18,7 +18,7 @@ apt -qq install -y \
     neovim \
     wget \
     curl \
-    tzdata
+    tzdata 
 
 echo "✔ base packages are installed"
 
@@ -28,6 +28,7 @@ echo "✔ base packages are installed"
 chsh -s $(which zsh)
 
 echo "✔ oh my zsh configured!"
+
 
 # Linking of files using dotbot
 set -e
