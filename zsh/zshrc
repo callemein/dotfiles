@@ -1,0 +1,55 @@
+# If you come from bash you might have to change your $PATH.
+# export PATH=$HOME/bin:/usr/local/bin:$PATH
+
+# Path to your oh-my-zsh installation.
+export ZSH=$HOME/.oh-my-zsh
+
+# Set name of the theme to load
+ZSH_THEME="nord"
+
+# Uncomment the following line to automatically update without prompting.
+DISABLE_UPDATE_PROMPT="true"
+
+# Uncomment the following line if you want to change the command execution time
+# stamp shown in the history command output.
+HIST_STAMPS="dd/mm/yyyy"
+
+# Which plugins would you like to load?
+# Standard plugins can be found in $ZSH/plugins/
+# Custom plugins may be added to $ZSH_CUSTOM/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
+# Add wisely, as too many plugins slow down shell startup.
+plugins=(git tmux docker fzf zsh-syntax-highlighting z)
+
+source $ZSH/oh-my-zsh.sh
+
+# User configuration
+
+# -- Command History
+export HISTSIZE=10000000
+export SAVEHIS=10000000
+
+# -- Change default editor
+export EDITOR='nvim'
+
+# -- set Key Timeout to 0.1 for zle
+export KEYTIMEOUT=1
+
+# -- Tmux
+export DISABLE_AUTO_TITLE="true"
+alias tmux="tmux -2"
+
+# -- Load fzf
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# -- Load aliases
+source ~/.dotfiles/zsh/aliases
+
+# -- Load functions
+source ~/.dotfiles/zsh/functions
+
+
+# -- Start tmux automatically
+if [[ -z "$TMUX" ]] && [ "$SSH_CONNECTION" != "" ]; then
+  tmux attach-session -t main || tmux new-session -s main
+fi

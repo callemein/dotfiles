@@ -1,0 +1,16 @@
+# NVIM
+alias vim=nvim
+alias vi=nvim
+
+
+# Docker
+alias dm=docker-machine
+alias dc=docker-compose
+alias docker-cleanup="docker ps -a | grep Exit | cut -d ' ' -f 1 | xargs docker rm"
+
+# Editor
+alias edit="$EDITOR"
+
+# Git
+alias gs='git status'
+alias gp='git pull'
