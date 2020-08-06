@@ -18,7 +18,7 @@ apt -qq install -y \
     neovim \
     wget \
     curl \
-    tzdata 
+    tzdata
 
 echo "✔ base packages are installed"
 
@@ -28,7 +28,6 @@ echo "✔ base packages are installed"
 chsh -s $(which zsh)
 
 echo "✔ oh my zsh configured!"
-
 
 # Linking of files using dotbot
 set -e
@@ -44,3 +43,11 @@ git -C "${DOTBOT_DIR}" submodule sync --quiet --recursive
 git submodule update --init --recursive "${DOTBOT_DIR}"
 
 "${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" -c "${CONFIG}" "${@}"
+
+
+# Install neovim plug manager
+sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+
+# Update plugins
+nvim +PlugInstall +qa
