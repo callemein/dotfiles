@@ -405,7 +405,7 @@
     </keybind>
     <keybind key="W-f">
       <action name="Execute">
-        <command>nautilus</command>
+        <command>thunar</command>
       </action>
     </keybind>
     <keybind key="W-l">
@@ -432,12 +432,12 @@
     <!-- Brightness -->
     <keybind key="XF86MonBrightnessUp">
       <action name="Execute">
-        <command>sudo brightness up</command>
+        <command>zsh -c ' source /home/tca/.zshrc ; brightness +'</command>
       </action>
     </keybind>
     <keybind key="XF86MonBrightnessDown">
       <action name="Execute">
-        <command>sudo brightness down</command>
+        <command>zsh -c 'source /home/tca/.zshrc ; brightness -'</command>
       </action>
     </keybind>
     <!-- Screenshots -->
@@ -874,7 +874,7 @@
   # order that they appear in this list
 
 
-    # each rule element can be left out or set to 'default' to specify to not 
+    # each rule element can be left out or set to 'default' to specify to not
     # change that attribute of the window
 
     <decor>yes</decor>
