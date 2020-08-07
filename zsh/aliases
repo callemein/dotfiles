@@ -16,3 +16,4 @@ alias edit="$EDITOR"
 # Git
 alias gs='git status'
 alias gp='git pull'
+
