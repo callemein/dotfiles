@@ -18,14 +18,18 @@ sudo apt -qq install -y \
     neovim \
     wget \
     curl \
-    tzdata
+    tzdata \
+    acpi \
+    feh \
+    pavucontrol \
+    light-locker
 
 echo "✔ base packages are installed"
 
 # Install Oh-my-zsh
 [ -d ~/.oh-my-zsh ] || git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
 [ -d ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting ] || git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
-chsh -s $(which zsh)
+sudo chsh -s $(which zsh)
 
 echo "✔ oh my zsh configured!"
 

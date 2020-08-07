@@ -1,0 +1,39 @@
+#!/usr/bin/env bash
+#--------------------------------------------------------------------------------------------------------
+# TINT2 EXECUTOR - CPU
+#--------------------------------------------------------------------------------------------------------
+#
+# Tint2 Executor - CPU : A tint2 executor that displays CPU usage
+# By 0phoff
+# GPL license
+#
+#--------------------------------------------------------------------------------------------------------
+#
+# Usage: ./cpu [-i] [-t]
+#	-i : Enable icon
+#	-t : Enable tooltip
+#
+#--------------------------------------------------------------------------------------------------------
+
+GPU_INFO=$(nvidia-smi --format=csv,noheader,nounits --query-gpu=name,utilization.gpu,memory.used,memory.total,temperature.gpu)
+GPU_POWER=$(echo $GPU_INFO | awk -F", " '/./ { print $2 }')
+
+# Get options
+while getopts "it" flag; do
+  case "$flag" in
+    i) ICON=true;;
+    t) TIP=true;;
+    \?) ;;
+  esac
+done
+
+# Print tooltip
+if [ "$TIP" = true ]; then
+  >&2 printf "%s\n" "$( echo $GPU_INFO | awk -F', ' '/./ { print $1"\n Mem:  "$3"/"$4" MiB\n Temp: "$5"C" }')"
+fi
+
+# Print volume info
+if  [ "$ICON" = true ]; then
+  echo "$HOME/.config/tint2/icons/gpu.svg"
+fi
+echo "${GPU_POWER}%"

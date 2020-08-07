@@ -1,0 +1,17 @@
+# Turn off system beep
+xset b off
+
+# Setup screens
+xrandr --auto --output HDMI-1-1 --mode 1920x1080 --right-of eDP-1-1
+xrandr --auto --output DP-1-1-2 --mode 1920x1080 --right-of eDP-1-1
+
+# Set BG
+feh --bg-fill  ~/.dotfiles/openbox/themes/wallpaper.JPG
+
+# System
+xfce4-power-manager &
+
+# Visual stuff
+compton -b &
+tint2 -c ~/.config/tint2/popside-top.tint2rc &
+tint2 -c ~/.config/tint2/minima.tint2rc &

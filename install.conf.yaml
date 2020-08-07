@@ -4,12 +4,21 @@
       relink: true
 
 - link:
+    ~/.themes:
+      path: openbox/themes
     ~/.tmux.conf:
     ~/.config/nvim:
+    ~/.config/tint2:
+      force: true
+      path: openbox/tint2
+    ~/.config/openbox:
+      force: true
+      path: openbox/openbox
     ~/.dir_colors:
     ~/.zshrc:
       force: true
       path: zsh/zshrc
+
 
     ~/.oh-my-zsh/custom/themes/nord.zsh-theme:
       path: zsh/themes/nord.zsh-theme
