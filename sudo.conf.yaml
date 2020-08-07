@@ -1,0 +1,9 @@
+- defaults:
+    link:
+      create: true
+      relink: true
+
+- link:
+    /etc/oblogout.conf:
+      force: true
+      path: openbox/oblogout.conf

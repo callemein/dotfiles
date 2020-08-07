@@ -22,7 +22,9 @@ sudo apt -qq install -y \
     acpi \
     feh \
     pavucontrol \
-    light-locker
+    light-locker \
+    python3-distutils \
+    python3-distutils-extra
 
 echo "✔ base packages are installed"
 
@@ -37,6 +39,7 @@ echo "✔ oh my zsh configured!"
 set -e
 
 CONFIG="install.conf.yaml"
+SUDO_CONFIG="sudo.conf.yaml"
 DOTBOT_DIR="dotbot"
 
 DOTBOT_BIN="bin/dotbot"
@@ -47,6 +50,14 @@ git -C "${DOTBOT_DIR}" submodule sync --quiet --recursive
 git submodule update --init --recursive "${DOTBOT_DIR}"
 
 "${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" -c "${CONFIG}" "${@}"
+sudo "${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" -c "${SUDO_CONFIG}" "${@}"
+
+# Installing OBLogout
+CURR_DIR=$PWD
+cd ~/.dotfiles/oblogout && sudo python3 setup.py -q install && cd $CURR_DIR
+
+echo "✔ oblogout configured!"
+
 
 
 # Install neovim plug manager
@@ -55,3 +66,6 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
 
 # Update plugins
 nvim +PlugInstall +qa
+
+echo "✔ neovim configured!"
+

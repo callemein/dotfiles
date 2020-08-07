@@ -18,7 +18,5 @@
     ~/.zshrc:
       force: true
       path: zsh/zshrc
-
-
     ~/.oh-my-zsh/custom/themes/nord.zsh-theme:
       path: zsh/themes/nord.zsh-theme

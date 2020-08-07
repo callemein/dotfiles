@@ -2,6 +2,8 @@
 alias vim=nvim
 alias vi=nvim
 
+# Python
+alias python=python3
 
 # Docker
 alias dm=docker-machine
