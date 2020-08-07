@@ -4,13 +4,13 @@ git pull
 echo "✔ dotfiles are up to date"
 
 echo "apt update..."
-apt -qq update
+sudo apt -qq update
 echo "✔ update done!"
 
 
 echo "apt install base packages..."
 # Installation of packages
-apt -qq install -y \
+sudo apt -qq install -y \
     git \
     tmux \
     htop \
