@@ -36,7 +36,6 @@ export EDITOR='nvim'
 export KEYTIMEOUT=1
 
 # -- Tmux
-export DISABLE_AUTO_TITLE="true"
 alias tmux="tmux -2"
 
 # -- Load fzf

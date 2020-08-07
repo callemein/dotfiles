@@ -180,7 +180,7 @@ ac_disconnected_cmd =
 # Executor 1
 execp = new
 execp_command = ~/.config/tint2/executor/cpu -it
-execp_interval = 5
+execp_interval = 1
 execp_has_icon = 1
 execp_cache_icon = 1
 execp_continuous = 0
@@ -202,7 +202,7 @@ execp_icon_h = 15
 # Executor 2
 execp = new
 execp_command = ~/.config/tint2/executor/gpu -it
-execp_interval = 5
+execp_interval = 1
 execp_has_icon = 1
 execp_cache_icon = 1
 execp_continuous = 0
@@ -224,7 +224,7 @@ execp_icon_h = 15
 # Executor 3
 execp = new
 execp_command = ~/.config/tint2/executor/network -it
-execp_interval = 10
+execp_interval = 5
 execp_has_icon = 1
 execp_cache_icon = 1
 execp_continuous = 0
@@ -246,7 +246,7 @@ execp_icon_h = 15
 # Executor 4
 execp = new
 execp_command = ~/.config/tint2/executor/volume -it
-execp_interval = 5
+execp_interval = 1
 execp_has_icon = 1
 execp_cache_icon = 1
 execp_continuous = 0
@@ -254,8 +254,8 @@ execp_markup = 0
 execp_lclick_command = pavucontrol
 execp_rclick_command = amixer -D pulse set Master 1+ toggle
 execp_mclick_command =
-execp_uwheel_command = amixer -q sset Master 5%+
-execp_dwheel_command = amixer -q sset Master 5%-
+execp_uwheel_command = amixer -q sset Master 1%+
+execp_dwheel_command = amixer -q sset Master 1%-
 execp_font = Noto Sans 8
 execp_font_color = #2f343f 100
 execp_padding = 12 8
@@ -268,7 +268,7 @@ execp_icon_h = 15
 # Executor 5
 execp = new
 execp_command = ~/.config/tint2/executor/battery -it
-execp_interval = 10
+execp_interval = 15
 execp_has_icon = 1
 execp_cache_icon = 1
 execp_continuous = 0
