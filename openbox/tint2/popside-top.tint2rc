@@ -46,7 +46,7 @@ border_color_pressed = #000000 0
 
 #-------------------------------------
 # Panel
-panel_items = EEEEEC
+panel_items = EEEEEEC
 panel_size = 95% 50
 panel_margin = 40 4
 panel_padding = 8 8 0
@@ -242,8 +242,32 @@ execp_centered = 1
 execp_icon_w = 0
 execp_icon_h = 15
 
+
 #-------------------------------------
 # Executor 4
+execp = new
+execp_command = ~/.config/tint2/executor/vpn -it
+execp_interval = 15
+execp_has_icon = 1
+execp_cache_icon = 1
+execp_continuous = 0
+execp_markup = 0
+execp_lclick_command = nmcli connection up TM_BYOD
+execp_rclick_command = nmcli connection down TM_BYOD
+execp_mclick_command =
+execp_uwheel_command =
+execp_dwheel_command =
+execp_font = Noto Sans 8
+execp_font_color = #2f343f 100
+execp_padding = 12 8
+execp_background_id = 2
+execp_centered = 1
+execp_icon_w = 0
+execp_icon_h = 15
+
+
+#-------------------------------------
+# Executor 5
 execp = new
 execp_command = ~/.config/tint2/executor/volume -it
 execp_interval = 1
@@ -263,9 +287,8 @@ execp_background_id = 2
 execp_centered = 1
 execp_icon_w = 0
 execp_icon_h = 15
-
 #-------------------------------------
-# Executor 5
+# Executor 6
 execp = new
 execp_command = ~/.config/tint2/executor/battery -it
 execp_interval = 15

@@ -1,0 +1,8 @@
+sudo nmcli connection import type openvpn file <<name>>.ovpn  # import connection
+nmcli connection modify <<name>> ipv4.never-default true      # only if necessary
+nmcli connection modify <<name>> +vpn.data username=<<user>>  # put vpn username
+sudo nmcli connection reload <<name>>                         # reload the config
+nmcli connection modify <<name>> +vpn.data password-flags=0   # can read password
+sudo service network-manager restart                          # restart manager
+nmcli con down id <<name>>                                    # tear connection down
+nmcli connection delete <<name>>                              # delete connection

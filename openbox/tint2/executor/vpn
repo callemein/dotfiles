@@ -1,0 +1,42 @@
+#!/usr/bin/env bash
+#--------------------------------------------------------------------------------------------------------
+# TINT2 EXECUTOR - NETWORK
+#--------------------------------------------------------------------------------------------------------
+#
+# Tint2 Executor - OpenVPN
+# GPL license
+#
+#--------------------------------------------------------------------------------------------------------
+#
+# Enter the correct network interfaces below (check ifonfig)
+# Usage: ./network [-i] [-t]
+#	-i : Enable icon
+#	-t : Enable tooltip
+#
+#--------------------------------------------------------------------------------------------------------
+
+VPN_NAME=TM_BYOD
+
+# Get options
+while getopts "it" flag; do
+  case "$flag" in
+    i) ICON=true;;
+    t) TIP=true;;
+    \?) ;;
+  esac
+done
+
+VPN_STATUS=$(nmcli con show --active | grep -i "$VPN_NAME")
+
+# Print tooltip
+if [ "${TIP}" = true ]; then
+  >&2 printf "%s\n"
+fi
+
+# Print vpn info
+if  [ -n $VPN_STATUS]; then
+    echo "$HOME/.config/tint2/icons/vpn-off.svg"
+else
+  echo "$HOME/.config/tint2/icons/vpn-on.svg"
+fi
+echo "${VPN_NAME}"
