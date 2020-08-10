@@ -387,7 +387,7 @@
         <menu>root-menu</menu>
       </action>
     </keybind>
-    <keybind key="S-A-W-F1">
+    <keybind key="W-F2">
       <action name="Execute">
         <command>rofi -modi window,drun,run -lines 12 -padding 18 -width 60 -location 0 -show drun -sidebar-mode -columns 3 -font "Noto Sans 8"</command>
       </action>
