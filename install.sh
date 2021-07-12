@@ -21,8 +21,6 @@ sudo apt -qq install -y \
     tzdata \
     acpi \
     feh \
-    pavucontrol \
-    light-locker \
     python3-distutils \
     python3-distutils-extra
 
@@ -51,13 +49,6 @@ git submodule update --init --recursive "${DOTBOT_DIR}"
 
 "${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" -c "${CONFIG}" "${@}"
 sudo "${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" -c "${SUDO_CONFIG}" "${@}"
-
-# Installing OBLogout
-CURR_DIR=$PWD
-cd ~/.dotfiles/oblogout && sudo python3 setup.py -q install && cd $CURR_DIR
-
-echo "✔ oblogout configured!"
-
 
 
 # Install neovim plug manager
