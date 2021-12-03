@@ -59,3 +59,5 @@ source ~/.dotfiles/zsh/functions
 if [[ -z "$TMUX" ]] && [ "$SSH_CONNECTION" != "" ]; then
   tmux attach-session -t main || tmux new-session -s main
 fi
+
+export PATH=$PATH:~/Tools/apache-jmeter-5.4.1/bin
